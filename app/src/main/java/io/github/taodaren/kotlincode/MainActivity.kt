@@ -11,44 +11,34 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        logI(TAG, "onCreate")
 
+        onClickBtn()
+        // 动态添加 Fragment
+        fragmentDynamicAdd()
+    }
+
+    private fun onClickBtn() {
         val mButton = findViewById<Button>(R.id.btn)
+        val btnFragLife = findViewById<Button>(R.id.btn_fragment_life)
         mButton.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("data", "data from MainActivity")
             startActivityForResult(intent, 1)
         }
+        btnFragLife.setOnClickListener { startActivity(Intent(this, LifeCycleActivity::class.java)) }
     }
 
-    override fun onStart() {
-        super.onStart()
-        logI(TAG, "onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        logI(TAG, "onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        logI(TAG, "onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        logI(TAG, "onStop")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        logI(TAG, "onDestroy")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        logI(TAG, "onRestart")
+    /** 动态添加 Fragment */
+    private fun fragmentDynamicAdd() {
+        // 1. 获取到 FragmentManager 对象
+        val fragmentManager = supportFragmentManager
+        // 2. 开启一个事务
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        // 3. 向容器内加入 Fragment
+        val firstFragment = FirstFragment()
+        fragmentTransaction.add(R.id.fragment_container, firstFragment)
+        // 4. 提交事务
+        fragmentTransaction.commit()
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
@@ -63,10 +53,6 @@ class MainActivity : BaseActivity() {
         logI(TAG, "onRestoreInstanceState")
         val getData = savedInstanceState!!.getString("key")
         logI(TAG, getData)
-    }
-
-    override fun onNewIntent(intent: Intent?) {
-        super.onNewIntent(intent)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

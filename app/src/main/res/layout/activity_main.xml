@@ -6,10 +6,21 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="点击跳转" />
+
+    <Button
+        android:id="@+id/btn_fragment_life"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="fragment 生命周期" />
 
 </LinearLayout>
