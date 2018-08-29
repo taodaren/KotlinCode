@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" />
-        <activity android:name=".LifeCycleActivity"></activity>
+        <activity android:name=".LifeCycleActivity" />
+        <activity android:name=".MgrTransactionActivity"></activity>
     </application>
 
 </manifest>

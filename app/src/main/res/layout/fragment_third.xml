@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#cbe15f"
+    android:background="#891081"
     android:gravity="center">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="这是我的第一个 Fragment"
-        android:textColor="#0b0faf"
+        android:text="这是我的第三个 Fragment"
+        android:textColor="#3df21d"
         android:textSize="18sp" />
 </LinearLayout>

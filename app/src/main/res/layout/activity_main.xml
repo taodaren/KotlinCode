@@ -9,6 +9,7 @@
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="wrap_content" />
 
     <Button
@@ -22,5 +23,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="fragment 生命周期" />
+
+    <Button
+        android:id="@+id/btn_fragment_mgr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="fragment 管理和事务" />
 
 </LinearLayout>
