@@ -82,6 +82,8 @@ class MgrTransactionActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
 
+        // 将事务加到 Back 栈
+        fragmentTransaction.addToBackStack(null)
         // 提交事务
         fragmentTransaction.commit()
     }
