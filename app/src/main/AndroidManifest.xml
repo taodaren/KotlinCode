@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".SecondActivity" />
         <activity android:name=".LifeCycleActivity" />
-        <activity android:name=".MgrTransactionActivity"></activity>
+        <activity android:name=".MgrTransactionActivity" />
+        <activity android:name=".BroadcastReceiverActivity"></activity>
     </application>
 
 </manifest>

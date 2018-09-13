@@ -21,6 +21,7 @@ class MainActivity : BaseActivity() {
         val mButton = findViewById<Button>(R.id.btn)
         val btnFragLife = findViewById<Button>(R.id.btn_fragment_life)
         val btnMgrTransaction = findViewById<Button>(R.id.btn_fragment_mgr)
+        val btnBroadcastReceiver = findViewById<Button>(R.id.btn_broadcast_receiver)
         mButton.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("data", "data from MainActivity")
@@ -28,6 +29,7 @@ class MainActivity : BaseActivity() {
         }
         btnFragLife.setOnClickListener { startActivity(Intent(this, LifeCycleActivity::class.java)) }
         btnMgrTransaction.setOnClickListener { startActivity(Intent(this, MgrTransactionActivity::class.java)) }
+        btnBroadcastReceiver.setOnClickListener { startActivity(Intent(this, BroadcastReceiverActivity::class.java)) }
     }
 
     /** 动态添加 Fragment */
